@@ -18,12 +18,12 @@ def home():
     for line in data_lines[1:]:
         if line.strip():
             # Dividir cada línea en columnas
-            columns = line.split(',')
+            columns = line.split('|')
             # Obtener el id (primer valor) y verificar si comienza con 3, 4, 5 o 7
             person_id = columns[0]
             if person_id.startswith(('3', '4', '5', '7')):
-                # Agregar a la lista sin id para la presentación
-                filto_data.append(columns[1:])
+                # Agregar a la lista
+                filto_data.append(columns)
 
     tabla = '<table border="1">\n' # Creación de la tabla
     tabla += '  <tr>\n'
